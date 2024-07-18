@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "./Button";
 
-export default function FormSplitForm({ selectedFriend, onSplitBill }) {
+export default function FormSplitBill({ selectedFriend, onSplitBill }) {
   const [bill, setBill] = useState("");
   const [paidByUser, setPaidByUser] = useState("");
   const paidByFriend = bill ? bill - paidByUser : "";
@@ -31,11 +31,11 @@ export default function FormSplitForm({ selectedFriend, onSplitBill }) {
     onSplitBill(splitBillValue);
   }
 
-  useEffect(() => {
-    setBill("");
-    setPaidByUser("");
-    setWhoIsPaying("you");
-  }, [selectedFriend]);
+  // useEffect(() => {
+  //   setBill("");
+  //   setPaidByUser("");
+  //   setWhoIsPaying("you");
+  // }, [selectedFriend]);
 
   return (
     <>

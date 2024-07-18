@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FriendsList from "./FriendsList";
 import FormAddFriend from "./FormAddFriend";
 import Button from "./Button";
-import FormSplitForm from "./FormSplitForm";
+import FormSplitBill from "./FormSplitBill";
 
 // Initial list of friends with their IDs, names, images, and balances.
 const initialFriends = [
@@ -70,7 +70,8 @@ export default function App() {
         </Button>
       </div>
       {selectedFriend && (
-        <FormSplitForm
+        <FormSplitBill
+          key={selectedFriend.id}
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
         />
